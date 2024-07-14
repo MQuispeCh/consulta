@@ -1,0 +1,159 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    color: #333;
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.buttons {
+    margin-top: 2rem;
+}
+
+button {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#siBtn {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+#noBtn {
+    background-color: #f44336;
+    color: white;
+    box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+    position: relative;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+#message {
+    margin-top: 2rem;
+    font-weight: bold;
+    color: #4CAF50;
+    font-size: 1.2rem;
+}
+
+.flower-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.flower {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.flower:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.petal {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    border-radius: 50% 50% 0 50%;
+    transform-origin: 100% 100%;
+}
+
+.petal:nth-child(1) { transform: rotate(0deg); }
+.petal:nth-child(2) { transform: rotate(72deg); }
+.petal:nth-child(3) { transform: rotate(144deg); }
+.petal:nth-child(4) { transform: rotate(216deg); }
+.petal:nth-child(5) { transform: rotate(288deg); }
+
+.flower::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, yellow 0%, orange 100%);
+    border-radius: 50%;
+    top: 40px;
+    left: 40px;
+}
+
+.flower::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background-color: #32CD32;
+    bottom: -40px;
+    left: 40px;
+    border-radius: 0 0 5px 5px;
+}
+
+.flower1 { top: 10%; left: 5%; }
+.flower2 { top: 60%; left: 80%; }
+.flower3 { top: 30%; right: 5%; }
+.flower4 { bottom: 10%; left: 15%; }
+.flower5 { top: 5%; right: 20%; }
+
+.flower1 .petal { background-color: #FF69B4; }
+.flower2 .petal { background-color: #FF6347; }
+.flower3 .petal { background-color: #4169E1; }
+.flower4 .petal { background-color: #32CD32; }
+.flower5 .petal { background-color: #9370DB; }
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.flower {
+    animation: float 6s ease-in-out infinite;
+}
+
+.flower1 { animation-delay: 0s; }
+.flower2 { animation-delay: 1s; }
+.flower3 { animation-delay: 2s; }
+.flower4 { animation-delay: 3s; }
+.flower5 { animation-delay: 4s; }
